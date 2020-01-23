@@ -1,3 +1,5 @@
+// Kotlin DSL sample
+
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -69,9 +71,9 @@ tasks.jacocoTestReport {
         xml.isEnabled = false
         csv.isEnabled = false
 
-//  각 리포트 타입 마다 리포트 저장 경로를 설정할 수 있다.
-//  html.destination = file("$buildDir/jacocoHtml")
-//  xml.destination = file("$buildDir/jacoco.xml")
+//      각 리포트 타입 마다 리포트 저장 경로를 설정할 수 있다.
+//      html.destination = file("$buildDir/jacocoHtml")
+//      xml.destination = file("$buildDir/jacoco.xml")
     }
 
     finalizedBy("jacocoTestCoverageVerification")
@@ -113,7 +115,8 @@ tasks.jacocoTestCoverageVerification {
             limit {
                 counter = "LINE"
                 value = "TOTALCOUNT"
-                maximum = "8".toBigDecimal()
+                maximum = "200".toBigDecimal()
+//              maximum = "8".toBigDecimal()
             }
 
             // 커버리지 체크를 제외할 클래스들
